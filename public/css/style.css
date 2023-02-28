@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding: 10px;
+    background-color: #555969;
+    border-bottom: 1px solid #acacbe;
+    color: #ECECF1;
+}
+
+header .site-title {
+    font-weight: 600;
+}
+
+main section {
+    background-color: #555969;
+    width: 100%;
+    height: calc(100vh - 50px);
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+main section .section-box {
+    /* background-color: #555969; */
+    width: 700px;
+    height: calc(100vh - 100px);
+    margin-top: 10px;
+}
+
+main section .section-box p {
+}
+
+main section .form-box {
+    width: 100%;
+    height: 100px;
+}
+
+main section .textarea-box {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+main section .form-box form {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+}
+
+main section .form-box textarea {
+    border-radius: 10px 0 0 10px;
+    width: calc(100% - 10px);
+    height: 100%;
+    border: 0px;
+    resize: none;
+}
+
+main section .form-box button {
+    border-radius: 0 10px 10px 0;
+    background-color: #fff;
+    padding-right: 10px;
+}

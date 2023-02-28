@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ChatGptController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
+
+Route::get('/generateResponse', [ChatGptController::class, 'generateResponse'])->middleware('auth')->name('generateResponse');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
