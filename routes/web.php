@@ -16,9 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Home画面
 Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
-Route::get('/generateResponse', [ChatGptController::class, 'generateResponse'])->middleware('auth')->name('generateResponse');
+// ChatGpt接続系
+Route::middleware('auth')->group(function () {
+    Route::put('/generate', [ChatGptController::class, 'generate'])->name('generate');
+    Route::get('/getAll', [ChatGptController::class, 'getAll'])->name('getAll');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -33,21 +33,4 @@
     </main>
     @include('body.footer')
 </body>
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="vue.js">
-    let app = new Vue({
-        el: '#app',
-        data() {
-            return {
-
-            }
-        },
-        methods: {
-            buttonClicked(){
-                window.alert('クリックしましたね')
-            }
-        }
-    })
-</script>
-
 </html>
