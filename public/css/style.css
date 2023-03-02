@@ -15,8 +15,10 @@ header {
     color: #ECECF1;
 }
 
-header .site-title {
+header .site-title a {
     font-weight: 600;
+    text-decoration: none;
+    color: #ECECF1
 }
 
 header .header-menu {
@@ -113,7 +115,7 @@ main section .form-box button {
 
 main section .form-box .form-spinner-box {
     border-radius: 0 10px 10px 0;
-    padding-top:25px;
+    padding-top: 25px;
     padding-right: 10px;
     background-color: #fff;
 

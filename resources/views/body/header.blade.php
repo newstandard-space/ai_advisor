@@ -1,7 +1,7 @@
 <header>
     <div>
         <span class="site-title">
-            Web AIアドバイザー
+            <a href="{{ route('home') }}">Web AIアドバイザー</a>
         </span>
     </div>
     <div class="header-menu">
