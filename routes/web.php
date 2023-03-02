@@ -23,6 +23,7 @@ Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('hom
 Route::middleware('auth')->group(function () {
     Route::put('/generate', [ChatGptController::class, 'generate'])->name('generate');
     Route::get('/getAll', [ChatGptController::class, 'getAll'])->name('getAll');
+    Route::get('/clearSession', [ChatGptController::class, 'clearSession'])->name('clearSession');
 });
 
 Route::get('/dashboard', function () {

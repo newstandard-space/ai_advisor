@@ -18,6 +18,14 @@ header .site-title {
     font-weight: 600;
 }
 
+header .header-menu {
+    display: flex;
+}
+
+header .header-separater {
+    margin: 0 5px;
+}
+
 main section {
     background-color: #555969;
     width: 100%;
@@ -69,4 +77,16 @@ main section .form-box button {
     border-radius: 0 10px 10px 0;
     background-color: #fff;
     padding-right: 10px;
+}
+
+main section .form-box .form-spinner-box {
+    border-radius: 0 10px 10px 0;
+    padding-top:25px;
+    padding-right: 10px;
+    background-color: #fff;
+
+}
+
+main section .form-box form .hidden {
+    display: none;
 }

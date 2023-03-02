@@ -33,4 +33,5 @@
     </main>
     @include('body.footer')
 </body>
+
 </html>

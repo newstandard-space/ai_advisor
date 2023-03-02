@@ -12,15 +12,13 @@ class ChatGptController extends Controller
         // API Key を取得 ( https://beta.openai.com/account/api-keys )
         $text = $request['text'];
 
-        $timestamp = date('Ymd').substr(explode(".", microtime(true))[1], 0, 3);
-        
+        $timestamp = date('Ymdhis').substr(explode(".", microtime(true))[1], 0, 3);
+
         // セッション引き継ぎ
         $chats = $request->session()->get('chats', array());
         
-        $chats[$timestamp]['id'] = $timestamp;
-        $chats[$timestamp]['question'] = $text;
-        
-        $request->session()->put('chats', $chats);
+        $chat['id'] = $timestamp;
+        $chat['question'] = $text;
 
         $API_KEY = env('CHAT_GPT_API_KEY');
 
@@ -62,9 +60,11 @@ class ChatGptController extends Controller
             }
         }
 
-        $chats[$timestamp]['answer'] = $generatedText;
+        $chat['answer'] = $generatedText;
+        
+        array_push($chats, $chat);
         $request->session()->put('chats', $chats);
-        return ['text' => $generatedText];
+        return ['chat' => $chat];
     }
 
     public function getAll(Request $request)
@@ -73,4 +73,9 @@ class ChatGptController extends Controller
         return ['chats' => $chats];
     }
 
+    public function clearSession(Request $request)
+    {
+        $request->session()->forget('chats');
+        return redirect('/');
+    }
 }
