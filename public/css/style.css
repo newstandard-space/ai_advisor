@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #555969;
 }
 
 header {
@@ -9,7 +10,7 @@ header {
     justify-content: space-between;
     height: 50px;
     padding: 10px;
-    background-color: #555969;
+    background-color: #343541;
     border-bottom: 1px solid #acacbe;
     color: #ECECF1;
 }
@@ -27,7 +28,7 @@ header .header-separater {
 }
 
 main section {
-    background-color: #555969;
+    background-color: #343541;
     width: 100%;
     height: calc(100vh - 50px);
     box-sizing: border-box;
@@ -44,7 +45,31 @@ main section .section-box {
     margin-top: 10px;
 }
 
-main section .section-box p {
+main section .chats-box {
+    color: #d9d9e3;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+main section .chats-box p {
+    margin: 0px;
+}
+
+main section .chat-question-box {
+    display: flex;
+    background-color: #343541;
+    padding: 20px 0;
+}
+
+main section .chat-answer-box {
+    display: flex;
+    background-color: #555969;
+    padding: 20px 0;
+}
+
+main section .chat-icon {
+    font-size: 1.4rem;
+    margin: 0 20px;
 }
 
 main section .form-box {

@@ -1,14 +1,19 @@
 <template>
   <div class="section-box">
-    <div v-if="Object.keys(chats).length">
-      <div v-for="chat in chats" :key="chat.id">
-        <div v-if="chat.question">
-          <p v-html="chat.question"></p>
+    <div v-if="Object.keys(chats).length" class="chats-box">
+      <div v-for="chat in chats" :key="chat.id" class="chat-box">
+        <div v-if="chat.question" class="chat-question-box">
+          <div class="chat-icon"><i class="bi bi-rocket"></i></div>
+          <div>
+            <p v-html="chat.question"></p>
+          </div>
         </div>
-        <div v-if="chat.answer">
-          <p v-html="chat.answer.slice(14)"></p>
+        <div v-if="chat.answer" class="chat-answer-box">
+          <div class="chat-icon"><i class="bi bi-robot"></i></div>
+          <div>
+            <p v-html="chat.answer.slice(14)"></p>
+          </div>
         </div>
-        <br />
       </div>
     </div>
   </div>
@@ -22,16 +27,16 @@
           rows="10"
           v-model="text"
         ></textarea>
-        <!-- <div class="form-spinner-box" :class="{ hidden: !isGenerating }">
+        <div class="form-spinner-box" :class="{ hidden: !isGenerating }">
           <div class="spinner-border text-secondary" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
-        </div> -->
+        </div>
         <button
           type="submit"
           @click="generate"
           :disabled="isGenerating"
-          :class="{ hidden: false }"
+          :class="{ hidden: isGenerating }"
         >
           <i class="bi bi-send" style="font-size: 30px"></i>
         </button>
@@ -103,7 +108,6 @@ export default {
           console.log("generate/失敗", err);
           isGenerating.value = false;
         });
-
     };
 
     return { generate, chats, isGenerating, text };
