@@ -30,7 +30,8 @@ header .header-separater {
 main section {
     background-color: #343541;
     width: 100%;
-    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+    height: 100%;
     box-sizing: border-box;
     display: flex;
     flex-flow: column;
@@ -40,9 +41,15 @@ main section {
 
 main section .section-box {
     /* background-color: #555969; */
-    width: 700px;
-    height: calc(100vh - 100px);
-    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+    min-height: calc(100vh - 150px);
+}
+
+@media screen and (min-width:800px) {
+    main section .section-box {
+        width: 700px;
+    }
 }
 
 main section .chats-box {
@@ -58,18 +65,18 @@ main section .chats-box p {
 main section .chat-question-box {
     display: flex;
     background-color: #343541;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 main section .chat-answer-box {
     display: flex;
     background-color: #555969;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 main section .chat-icon {
     font-size: 1.4rem;
-    margin: 0 20px;
+    margin-right: 20px;
 }
 
 main section .form-box {

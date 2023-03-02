@@ -26,6 +26,8 @@
           cols="30"
           rows="10"
           v-model="text"
+          @keydown.ctrl.enter="generate"
+          @keydown.meta.enter="generate"
         ></textarea>
         <div class="form-spinner-box" :class="{ hidden: !isGenerating }">
           <div class="spinner-border text-secondary" role="status">
