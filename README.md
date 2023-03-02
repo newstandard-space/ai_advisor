@@ -14,4 +14,4 @@ https://user-images.githubusercontent.com/63628888/222426293-18faae32-131f-4f06-
 ・Bootstrap 5
 
 ## 使用したAPI
-・OpenAI（https://beta.openai.com/account/api-keys）
+・OpenAI（ https://beta.openai.com/account/api-keys ）
